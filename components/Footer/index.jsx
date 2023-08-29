@@ -25,7 +25,8 @@ const Footer = () => {
               />
               <div className="flex flex-col md:w-8/12 2xl:w-6/12">
                 <p className="text-[#5E5E5E] sat-regular  lg:text-lg mt-[18px]">
-                  H10 Eden Garden, Lekki, Lagos.
+                No 10 EDS, Lekki Lagos.
+
                 </p>
                 <Link
                   href="mailto:Contact@entreplin.com"
