@@ -4,23 +4,16 @@ import Image from "next/image";
 import google from "../../assets/svg/google-logo.svg";
 import apple from "../../assets/svg/apple-logo.svg";
 import hero from "../../assets/svg/hero.svg";
-import { getMobileOperatingSystem } from "../../utils/helper";
 
 const Hero = () => {
-  const [mobileOperating, setMobileOperating] = React.useState<string>();
+  const onNavigateApple = () => {
+    window.location.href =
+      "https://apps.apple.com/id/app/entreplin/id6463440642";
+  };
 
-  useEffect(() => {
-    setMobileOperating(getMobileOperatingSystem());
-  }, []);
-
-  const onNavigate = () => {
-    if (mobileOperating === "iOS") {
-      window.location.href =
-        "https://apps.apple.com/id/app/entreplin/id6463440642";
-    } else if (mobileOperating === "Android") {
-      window.location.href =
-        "https://play.google.com/store/apps/details?id=com.entreplin";
-    }
+  const onNavigateGoogle = () => {
+    window.location.href =
+      "https://play.google.com/store/apps/details?id=com.entreplin";
   };
 
   return (
@@ -37,26 +30,23 @@ const Hero = () => {
             businesses, partner, give and receive support
           </p>
           <div className="flex items-center space-x-4  mt-[22px]">
-            {mobileOperating === "iOS" && (
-              <button onClick={onNavigate}>
-                <Image
-                  src={apple}
-                  width={apple.width}
-                  height={apple.height}
-                  alt="apple"
-                />
-              </button>
-            )}
-            {mobileOperating === "Android" && (
-              <button onClick={onNavigate}>
-                <Image
-                  src={google}
-                  width={google.width}
-                  height={google.height}
-                  alt="google"
-                />
-              </button>
-            )}
+            <button onClick={onNavigateApple}>
+              <Image
+                src={apple}
+                width={apple.width}
+                height={apple.height}
+                alt="apple"
+              />
+            </button>
+
+            <button onClick={onNavigateGoogle}>
+              <Image
+                src={google}
+                width={google.width}
+                height={google.height}
+                alt="google"
+              />
+            </button>
           </div>
         </div>
         <div className="w-full md:w-6/12 mt-8 md:mt-0">
